@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="APP">
+<head>
+	<meta charset="UTF-8">
+	<title>angular-timer example</title>
+	
+</head>
+<body>
+	<timer interval="1000">{{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"></script>
+	<script src="timer.js"></script>
+	<script>
+	angular.module("APP",['timer']);
+	</script>
+</body>
+</html>
