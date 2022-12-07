@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src=
+"http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+
+
+
+<textarea style="background-color:pink;color:green" ng-model="message" cols="80" rows="20"></textarea>
+
+<p align="center">
+<button ng-click="save()">Save</button>
+<button ng-click="clear()">Clear</button>
+</p>
+
+
+
+<script src="myNoteApp.js"></script>
+<script src="myNoteCtrl.js"></script>
+
+</body>
+</html>
