@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="APP">
+<head>
+	<meta charset="UTF-8">
+	<title>angular-translate example</title>
+  <style>
+    button {
+      width:125px;
+      display:block;
+    }
+	body{
+	 }
+  </style>
+</head>
+<body>
+  <h2 translate="TITLE">tutorials point</h2>
+  <div ng-controller="ExampleController">
+    <button ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN">english</button>
+    <button ng-click="changeLanguage('de')" translate="BUTTON_LANG_DE">german</button>
+    <button ng-click="changeLanguage('es')" translate="BUTTON_LANG_ES">spanish</button>
+  </div>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.1.4/angular.min.js"></script>
+	<script src="translate.js"></script>
+	<script>
+    var app = angular.module('APP', ['pascalprecht.translate'])
+    .config(function ($translateProvider) {
+      $translateProvider.translations('en', {
+        TITLE: 'tutorials point',
+        BUTTON_LANG_EN: 'English',
+        BUTTON_LANG_DE: 'German',
+        BUTTON_LANG_ES: 'Spanish',
+
+      });
+      $translateProvider.translations('de', {
+        TITLE: 'Tutorials Punkt',
+        BUTTON_LANG_EN: 'Englisch',
+        BUTTON_LANG_DE: 'Deutsch',
+        BUTTON_LANG_ES: 'Spanisch',
+      });
+      $translateProvider.translations('es', {
+        TITLE: 'punto tutoriales',
+        BUTTON_LANG_EN: 'Inglés',
+        BUTTON_LANG_DE: 'Alemán',
+        BUTTON_LANG_ES: 'Español',
+      });
+
+      $translateProvider.preferredLanguage('en');
+
+    })
+    .controller('ExampleController', ['$scope', '$translate', function ($scope, $translate) {
+      $scope.changeLanguage = function (key) {
+        $translate.use(key);
+      };
+    }]);
+	</script>
+</body>
+</html>
